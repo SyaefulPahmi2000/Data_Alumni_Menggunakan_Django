@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block title %} {{judul}} {% endblock title %} {% block contents %}
+<center>
+  <h1>{{judul}}</h1>
+</center>
+
+<div class="container mt-5">
+  <a href="{% url 'tambah' %}" type="button" class="btn btn-secondary"><i class="bi bi-plus"></i>Tambah Data</a>
+  {% for message in messages %} {% if message %}
+  <div class="alert alert-success">{{message}}</div>
+  {% endif %} {% endfor %}
+  <!--Bagian Navbar-->
+  <div class="table-responsive mt-3">
+    <table class="table table-striped table-bordered" id="dataTable">
+      <thead class="table-secondary text-center">
+        <tr>
+          <th>No</th>
+          <th>Nama Alumni</th>
+          <th>Alamat</th>
+          <th>Pekerjaan</th>
+          <th>No Hp</th>
+          <th>JK</th>
+          <th>Angkatan</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        {% for alumni in isi %}
+
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{alumni.nama}}</td>
+          <td>{{alumni.alamat}}</td>
+          <td>{{alumni.pekerjaan}}</td>
+          <td>{{alumni.no_hp}}</td>
+          <td>{{alumni.jenis_kelamin}}</td>
+          <td>{{alumni.angkatan}}</td>
+
+          <td>
+            <a href="{% url 'ubah' alumni.id %}" class="btn btn-secondary btn-sm">Ubah<i class="bi bi-pencil-square"></i></a> |
+            <a href="{% url 'hapus' alumni.id %}" class="btn btn-danger btn-sm">Delete<i class="bi bi-calendar-x"></i></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock contents %}

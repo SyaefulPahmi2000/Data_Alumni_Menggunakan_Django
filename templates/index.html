@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block title %} {{judul}} {% endblock title %} {% block contents %}
+<center>
+  <h1>{{judul}}</h1>
+  <h1>{{isi}}</h1>
+</center>
+{% load static %}
+<section id="projects">
+  <div class="container">
+    <h1 class="d-flex justify-content-center mb-3 pt-5">YAYASAN PONDOK PESANTREN DARUMUHYIDDIN NW DEBOK</h1>
+    <div class="jumbotron" style="padding-top: 4rem">
+      <div class="row g-3 justify-content-between">
+        <div class="col-md-3 mb-3" class="" data-aos="">
+          <div class="">
+            <img src="{% static 'img/dm.png' %}" class="card-img-top" alt="Project 1" />
+            <div class="card-body">
+              <h5 class="card-title text-center">Pondok Pesanten Darumuhyiddin NW Debok</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3" data-aos-delay="500">
+          <div class="">
+            <img src="{% static 'img/my.jpg'%}" class="card-img-top" alt="Project 2" />
+            <div class="card-body">
+              <h6 class="card-text text-center">
+                <b>TGH. MUHSIN MUHYIDDIN</b> <br />
+                Pendiri Yayasan Pondok Pesantren Darumuhyiddin NW Debok
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h1 class="card-title" style="text-align: left; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 50px"><b>Pecu, Pesu, istiqkomah</b></h1>
+          <p class="card-text">Mencetak Santri-Santri Yang <b>Berprestasi, Cerdas dan Berakhlaqul Karimah</b></p>
+          <a href="/dataapp/tabel_data" class="btn btn-secondary" style="font-size: 30px">Data Alumni</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock contents %}
